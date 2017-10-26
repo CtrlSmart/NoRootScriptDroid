@@ -13,16 +13,16 @@ import com.stardust.scriptdroid.ui.BaseActivity;
 import com.jraska.console.Console;
 import com.stardust.scriptdroid.R;
 
-import org.androidannotations.annotations.AfterViews;
-import org.androidannotations.annotations.EActivity;
+//import org.androidannotations.annotations.AfterViews;
+//import org.androidannotations.annotations.EActivity;
 
 /**
  * Created by Stardust on 2017/2/12.
  */
-@EActivity(R.layout.activity_console)
+//@EActivity(R.layout.activity_console)
 public class LogActivity extends BaseActivity {
 
-    @AfterViews
+//    @AfterViews
     void setUpUI() {
         setToolbarAsBack(getString(R.string.text_log));
     }

@@ -42,17 +42,17 @@ import com.stardust.theme.dialog.ThemeColorMaterialDialogBuilder;
 import com.stardust.util.SparseArrayEntries;
 import com.stardust.widget.ToolbarMenuItem;
 
-import org.androidannotations.annotations.AfterViews;
-import org.androidannotations.annotations.Click;
-import org.androidannotations.annotations.EActivity;
-import org.androidannotations.annotations.ViewById;
+//import org.androidannotations.annotations.AfterViews;
+//import org.androidannotations.annotations.Click;
+//import org.androidannotations.annotations.EActivity;
+//import org.androidannotations.annotations.ViewById;
 
 import java.io.File;
 
 /**
  * Created by Stardust on 2017/1/29.
  */
-@EActivity(R.layout.activity_edit)
+//@EActivity(R.layout.activity_edit)
 public class EditActivity extends Editor920Activity implements OnActivityResultDelegate.DelegateHost {
 
 
@@ -93,17 +93,17 @@ public class EditActivity extends Editor920Activity implements OnActivityResultD
     }
 
     public static void editFile(Context context, String name, String path) {
-        context.startActivity(new Intent(context, EditActivity_.class)
-                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                .putExtra(EXTRA_PATH, path)
-                .putExtra(EXTRA_NAME, name));
+//        context.startActivity(new Intent(context, EditActivity_.class)
+//                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+//                .putExtra(EXTRA_PATH, path)
+//                .putExtra(EXTRA_NAME, name));
     }
 
     public static void editFile(Context context, ScriptFile file) {
         editFile(context, file.getSimplifiedName(), file.getPath());
     }
 
-    @ViewById(R.id.content_view)
+//    @ViewById(R.id.content_view)
     View mView;
     private String mName;
     private File mFile;
@@ -134,7 +134,7 @@ public class EditActivity extends Editor920Activity implements OnActivityResultD
         registerReceiver(mOnRunFinishedReceiver, new IntentFilter(Scripts.ACTION_ON_EXECUTION_FINISHED));
     }
 
-    @AfterViews
+//    @AfterViews
     void setUpViews() {
         ThemeColorManager.addActivityStatusBar(this);
         setUpToolbar();
@@ -187,7 +187,7 @@ public class EditActivity extends Editor920Activity implements OnActivityResultD
         BaseActivity.setToolbarAsBack(this, R.id.toolbar, mName);
     }
 
-    @Click(R.id.run)
+//    @Click(R.id.run)
     void runAndSaveFileIFNeeded() {
         if (!mReadOnly && mEditorDelegate.isChanged()) {
             saveFile(false, new SaveListener() {
@@ -216,20 +216,20 @@ public class EditActivity extends Editor920Activity implements OnActivityResultD
     }
 
 
-    @Click(R.id.undo)
+//    @Click(R.id.undo)
     void undo() {
         Command command = new Command(Command.CommandEnum.UNDO);
         mEditorDelegate.doCommand(command);
     }
 
-    @Click(R.id.redo)
+//    @Click(R.id.redo)
     void redo() {
         Command command = new Command(Command.CommandEnum.REDO);
         mEditorDelegate.doCommand(command);
     }
 
 
-    @Click(R.id.save)
+//    @Click(R.id.save)
     void saveFile() {
         saveFile(false, null);
     }
@@ -261,24 +261,24 @@ public class EditActivity extends Editor920Activity implements OnActivityResultD
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_console:
-                showConsole();
-                return true;
-            case R.id.action_log:
-                showLog();
-                return true;
-            case R.id.action_help:
-                HelpCatalogueActivity.showMainCatalogue(this);
-                return true;
-            case R.id.action_beautify:
-                beautifyCode();
-                return true;
-            case R.id.action_open_by_other_apps:
-                openByOtherApps();
-                return true;
-            case R.id.action_force_stop:
-                forceStop();
-                return true;
+//            case R.id.action_console:
+//                showConsole();
+//                return true;
+//            case R.id.action_log:
+//                showLog();
+//                return true;
+//            case R.id.action_help:
+//                HelpCatalogueActivity.showMainCatalogue(this);
+//                return true;
+//            case R.id.action_beautify:
+//                beautifyCode();
+//                return true;
+//            case R.id.action_open_by_other_apps:
+//                openByOtherApps();
+//                return true;
+//            case R.id.action_force_stop:
+//                forceStop();
+//                return true;
         }
         return super.onOptionsItemSelected(item);
     }

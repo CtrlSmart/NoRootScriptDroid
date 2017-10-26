@@ -20,32 +20,32 @@ import com.stardust.theme.ThemeColorManager;
 import com.stardust.theme.ThemeColorManagerCompat;
 import com.stardust.widget.ToolbarMenuItem;
 
-import org.androidannotations.annotations.AfterViews;
-import org.androidannotations.annotations.Click;
-import org.androidannotations.annotations.EActivity;
-import org.androidannotations.annotations.ViewById;
+//import org.androidannotations.annotations.AfterViews;
+//import org.androidannotations.annotations.Click;
+//import org.androidannotations.annotations.EActivity;
+//import org.androidannotations.annotations.ViewById;
 
 /**
  * Created by Stardust on 2017/4/5.
  */
-@EActivity(R.layout.activity_tasker_script_edit)
+//@EActivity(R.layout.activity_tasker_script_edit)
 public class TaskerScriptEditActivity extends Editor920Activity {
 
     public static final int REQUEST_CODE = "Love you. Can we go back?".hashCode() >> 16;
     public static final String EXTRA_CONTENT = "Still Love Eating 17.4.5";
 
     public static void edit(Activity activity, String title, String summary, String content) {
-        activity.startActivityForResult(new Intent(activity, TaskerScriptEditActivity_.class)
-                .putExtra(EXTRA_CONTENT, content)
-                .putExtra("summary", summary)
-                .putExtra("title", title), REQUEST_CODE);
+//        activity.startActivityForResult(new Intent(activity, TaskerScriptEditActivity_.class)
+//                .putExtra(EXTRA_CONTENT, content)
+//                .putExtra("summary", summary)
+//                .putExtra("title", title), REQUEST_CODE);
     }
 
     private EditorDelegate mEditorDelegate;
     private String mTitle, mSummary;
-    @ViewById(R.id.redo)
+//    @ViewById(R.id.redo)
     ToolbarMenuItem mRedo;
-    @ViewById(R.id.undo)
+//    @ViewById(R.id.undo)
     ToolbarMenuItem mUndo;
 
     @Override
@@ -55,7 +55,7 @@ public class TaskerScriptEditActivity extends Editor920Activity {
         handleIntent(getIntent());
     }
 
-    @AfterViews
+//    @AfterViews
     void setUpViews() {
         ((TextView) findViewById(R.id.summary)).setText(mSummary);
         ThemeColorManager.addActivityStatusBar(this);
@@ -83,13 +83,13 @@ public class TaskerScriptEditActivity extends Editor920Activity {
         inputMethodEnhanceBar.setEditTextBridge(new EditActivity.InputMethodEnhanceBarBridge(this, editorView.getEditText()));
     }
 
-    @Click(R.id.undo)
+//    @Click(R.id.undo)
     void undo() {
         Command command = new Command(Command.CommandEnum.UNDO);
         mEditorDelegate.doCommand(command);
     }
 
-    @Click(R.id.redo)
+//    @Click(R.id.redo)
     void redo() {
         Command command = new Command(Command.CommandEnum.REDO);
         mEditorDelegate.doCommand(command);

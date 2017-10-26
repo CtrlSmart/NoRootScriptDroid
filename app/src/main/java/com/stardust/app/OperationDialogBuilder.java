@@ -15,9 +15,9 @@ import com.stardust.scriptdroid.R;
 
 import java.util.ArrayList;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+//import butterknife.BindView;
+//import butterknife.ButterKnife;
+//import butterknife.OnClick;
 
 /**
  * Created by Stardust on 2017/6/26.
@@ -48,7 +48,7 @@ public class OperationDialogBuilder extends MaterialDialog.Builder {
                 holder.icon.setImageResource(mIcons.get(position));
                 if (mOnItemClickTarget != null) {
                     //// TODO: 2017/6/26   效率
-                    ButterKnife.bind(mOnItemClickTarget, holder.itemView);
+//                    ButterKnife.bind(mOnItemClickTarget, holder.itemView);
                 }
             }
 
@@ -74,14 +74,14 @@ public class OperationDialogBuilder extends MaterialDialog.Builder {
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.icon)
+//        @BindView(R.id.icon)
         ImageView icon;
-        @BindView(R.id.text)
+//        @BindView(R.id.text)
         TextView text;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.bind(this, itemView);
+//            ButterKnife.bind(this, itemView);
 
         }
 

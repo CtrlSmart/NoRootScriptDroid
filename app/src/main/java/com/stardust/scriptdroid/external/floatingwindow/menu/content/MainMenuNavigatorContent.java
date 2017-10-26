@@ -13,7 +13,7 @@ import com.stardust.scriptdroid.R;
 import com.stardust.scriptdroid.autojs.AutoJs;
 import com.stardust.scriptdroid.external.floatingwindow.menu.HoverMenuService;
 import com.stardust.scriptdroid.tool.AccessibilityServiceTool;
-import com.stardust.scriptdroid.ui.main.MainActivity_;
+//import com.stardust.scriptdroid.ui.main.MainActivity_;
 import com.stardust.util.ClipboardUtil;
 import com.stardust.util.MessageEvent;
 import com.stardust.view.accessibility.AccessibilityService;
@@ -21,9 +21,9 @@ import com.stardust.view.accessibility.LayoutInspector;
 
 import org.greenrobot.eventbus.Subscribe;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+//import butterknife.BindView;
+//import butterknife.ButterKnife;
+//import butterknife.OnClick;
 import io.mattcarroll.hover.Navigator;
 import io.mattcarroll.hover.NavigatorContent;
 
@@ -34,9 +34,9 @@ import io.mattcarroll.hover.NavigatorContent;
 public class MainMenuNavigatorContent implements NavigatorContent {
 
     private View mView;
-    @BindView(R.id.current_package)
+//    @BindView(R.id.current_package)
     TextView mCurrentPackageTextView;
-    @BindView(R.id.current_activity)
+//    @BindView(R.id.current_activity)
     TextView mCurrentActivityTextView;
     private String mCurrentPackage, mCurrentActivity;
     private Context mContext;
@@ -44,11 +44,11 @@ public class MainMenuNavigatorContent implements NavigatorContent {
     public MainMenuNavigatorContent(Context context) {
         mContext = context;
         mView = View.inflate(context, R.layout.floating_window_main_menu, null);
-        ButterKnife.bind(this, mView);
+//        ButterKnife.bind(this, mView);
         HoverMenuService.getEventBus().register(this);
     }
 
-    @OnClick(R.id.layout_hierarchy)
+//    @OnClick(R.id.layout_hierarchy)
     void showLayoutHierarchy() {
         if (!ensureCapture()) {
             return;
@@ -73,7 +73,7 @@ public class MainMenuNavigatorContent implements NavigatorContent {
         return true;
     }
 
-    @OnClick(R.id.layout_bounds)
+//    @OnClick(R.id.layout_bounds)
     void showLayoutBounds() {
         if (!ensureCapture()) {
             return;
@@ -81,19 +81,19 @@ public class MainMenuNavigatorContent implements NavigatorContent {
         HoverMenuService.postIntent(new Intent(HoverMenuService.ACTION_SHOW_LAYOUT_BOUNDS));
     }
 
-    @OnClick(R.id.stop_all_running_scripts)
+//    @OnClick(R.id.stop_all_running_scripts)
     void stopAllRunningScripts() {
         AutoJs.getInstance().getScriptEngineService().stopAllAndToast();
     }
 
-    @OnClick(R.id.open_launcher)
+//    @OnClick(R.id.open_launcher)
     void openMainActivity() {
-        App.getApp().startActivity(new Intent(App.getApp(), MainActivity_.class)
-                .addFlags(Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY | Intent.FLAG_ACTIVITY_NEW_TASK));
+//        App.getApp().startActivity(new Intent(App.getApp(), MainActivity_.class)
+//                .addFlags(Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY | Intent.FLAG_ACTIVITY_NEW_TASK));
         HoverMenuService.postIntent(new Intent(HoverMenuService.ACTION_COLLAPSE_MENU));
     }
 
-    @OnClick(R.id.open_accessibility_settings)
+//    @OnClick(R.id.open_accessibility_settings)
     void openAccessibilitySettings() {
         AccessibilityServiceTool.enableAccessibilityService();
         HoverMenuService.postIntent(new Intent(HoverMenuService.ACTION_COLLAPSE_MENU));
@@ -117,13 +117,13 @@ public class MainMenuNavigatorContent implements NavigatorContent {
         mCurrentPackageTextView.setText(mContext.getString(R.string.text_current_package) + mCurrentPackage);
     }
 
-    @OnClick(R.id.current_activity)
+//    @OnClick(R.id.current_activity)
     void copyCurrentActivity() {
         ClipboardUtil.setClip(mContext, mCurrentActivity);
         Toast.makeText(mContext, R.string.text_copied, Toast.LENGTH_SHORT).show();
     }
 
-    @OnClick(R.id.current_package)
+//    @OnClick(R.id.current_package)
     void copyCurrentPackage() {
         ClipboardUtil.setClip(mContext, mCurrentPackage);
         Toast.makeText(mContext, R.string.text_copied, Toast.LENGTH_SHORT).show();

@@ -19,10 +19,10 @@ import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
 import java.lang.reflect.Field;
 import java.util.Arrays;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-import butterknife.Optional;
+//import butterknife.BindView;
+//import butterknife.ButterKnife;
+//import butterknife.OnClick;
+//import butterknife.Optional;
 
 /**
  * Created by Stardust on 2017/3/10.
@@ -154,19 +154,19 @@ public class NodeInfoView extends RecyclerView {
     class ViewHolder extends RecyclerView.ViewHolder {
 
 
-        @BindView(R.id.name)
+//        @BindView(R.id.name)
         TextView attrName;
 
-        @BindView(R.id.value)
+//        @BindView(R.id.value)
         TextView attrValue;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.bind(this, itemView);
+//            ButterKnife.bind(this, itemView);
         }
 
-        @Optional
-        @OnClick(R.id.item)
+//        @Optional
+//        @OnClick(R.id.item)
         void onItemClick() {
             int pos = getAdapterPosition();
             if (pos < 1 || pos >= mData.length)

@@ -22,14 +22,14 @@ import com.stardust.scriptdroid.ui.BaseActivity;
 import com.stardust.scriptdroid.ui.main.script_list.ScriptAndFolderListRecyclerView;
 import com.stardust.scriptdroid.ui.main.script_list.ScriptListWithProgressBarView;
 
-import org.androidannotations.annotations.AfterViews;
-import org.androidannotations.annotations.Click;
-import org.androidannotations.annotations.EActivity;
+//import org.androidannotations.annotations.AfterViews;
+//import org.androidannotations.annotations.Click;
+//import org.androidannotations.annotations.EActivity;
 
 /**
  * Created by Stardust on 2017/7/11.
  */
-@EActivity(R.layout.activity_script_widget_settings)
+//@EActivity(R.layout.activity_script_widget_settings)
 public class ScriptWidgetSettingsActivity extends BaseActivity {
 
 
@@ -43,7 +43,7 @@ public class ScriptWidgetSettingsActivity extends BaseActivity {
         mAppWidgetId = getIntent().getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
     }
 
-    @AfterViews
+//    @AfterViews
     void setUpViews() {
         BaseActivity.setToolbarAsBack(this, R.id.toolbar, getString(R.string.text_please_choose_a_script));
         initScriptListRecyclerView();

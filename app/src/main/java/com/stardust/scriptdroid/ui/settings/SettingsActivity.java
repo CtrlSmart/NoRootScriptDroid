@@ -16,7 +16,7 @@ import com.stardust.scriptdroid.ui.BaseActivity;
 import com.stardust.scriptdroid.ui.error.IssueReporterActivity;
 import com.stardust.scriptdroid.ui.main.MainActivity;
 import com.stardust.scriptdroid.ui.splash.SplashActivity;
-import com.stardust.scriptdroid.ui.splash.SplashActivity_;
+//import com.stardust.scriptdroid.ui.splash.SplashActivity_;
 import com.stardust.scriptdroid.ui.update.UpdateCheckDialog;
 import com.stardust.util.IntentUtil;
 import com.stardust.util.MapEntries;
@@ -25,8 +25,8 @@ import com.stardust.theme.app.ColorSelectActivity;
 import com.stardust.theme.util.ListBuilder;
 import com.stardust.util.MessageEvent;
 
-import org.androidannotations.annotations.AfterViews;
-import org.androidannotations.annotations.EActivity;
+//import org.androidannotations.annotations.AfterViews;
+//import org.androidannotations.annotations.EActivity;
 import org.greenrobot.eventbus.EventBus;
 
 import java.util.List;
@@ -39,7 +39,7 @@ import de.psdev.licensesdialog.licenses.License;
 /**
  * Created by Stardust on 2017/2/2.
  */
-@EActivity(R.layout.activity_settings)
+//@EActivity(R.layout.activity_settings)
 public class SettingsActivity extends BaseActivity {
 
     private static final List<ColorSelectActivity.ColorItem> COLOR_ITEMS;
@@ -68,7 +68,7 @@ public class SettingsActivity extends BaseActivity {
                 .list();
     }
 
-    @AfterViews
+//    @AfterViews
     void setUpUI() {
         setUpToolbar();
         getFragmentManager().beginTransaction().replace(R.id.fragment_setting, new PreferenceFragment()).commit();
@@ -119,10 +119,10 @@ public class SettingsActivity extends BaseActivity {
                     .entry(getString(R.string.show_ad), new Runnable() {
                         @Override
                         public void run() {
-                            SplashActivity_.intent(getActivity())
-                                    .extra(SplashActivity.NOT_START_MAIN_ACTIVITY, true)
-                                    .extra(SplashActivity.FORCE_SHOW_AD, true)
-                                    .start();
+//                            SplashActivity_.intent(getActivity())
+//                                    .extra(SplashActivity.NOT_START_MAIN_ACTIVITY, true)
+//                                    .extra(SplashActivity.FORCE_SHOW_AD, true)
+//                                    .start();
                         }
                     })
                     .entry(getString(R.string.text_check_update), new Runnable() {
@@ -148,7 +148,7 @@ public class SettingsActivity extends BaseActivity {
                     .entry(getString(R.string.text_about_me_and_repo), new Runnable() {
                         @Override
                         public void run() {
-                            startActivity(new Intent(getActivity(), AboutActivity_.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+//                            startActivity(new Intent(getActivity(), AboutActivity_.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                         }
                     })
                     .entry(getString(R.string.text_licenses), new Runnable() {

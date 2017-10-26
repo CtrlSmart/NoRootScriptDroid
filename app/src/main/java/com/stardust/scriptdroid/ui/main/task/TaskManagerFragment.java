@@ -8,27 +8,27 @@ import com.stardust.scriptdroid.R;
 import com.stardust.scriptdroid.autojs.AutoJs;
 import com.stardust.widget.SimpleAdapterDataObserver;
 
-import org.androidannotations.annotations.AfterViews;
-import org.androidannotations.annotations.Click;
-import org.androidannotations.annotations.EFragment;
-import org.androidannotations.annotations.ViewById;
+//import org.androidannotations.annotations.AfterViews;
+//import org.androidannotations.annotations.Click;
+//import org.androidannotations.annotations.EFragment;
+//import org.androidannotations.annotations.ViewById;
 
 /**
  * Created by Stardust on 2017/3/24.
  */
-@EFragment(R.layout.fragment_task_manager)
+//@EFragment(R.layout.fragment_task_manager)
 public class TaskManagerFragment extends Fragment {
 
-    @ViewById(R.id.task_list)
+//    @ViewById(R.id.task_list)
     TaskListRecyclerView mTaskListRecyclerView;
-    @ViewById(R.id.close_all)
+//    @ViewById(R.id.close_all)
     View mCloseAllView;
-    @ViewById(R.id.notice_no_running_script)
+//    @ViewById(R.id.notice_no_running_script)
     View mNoRunningScriptNotice;
-    @ViewById(R.id.swipe_refresh_layout)
+//    @ViewById(R.id.swipe_refresh_layout)
     SwipeRefreshLayout mSwipeRefreshLayout;
 
-    @AfterViews
+//    @AfterViews
     void setUpViews() {
         init();
         final boolean noRunningScript = mTaskListRecyclerView.getAdapter().getItemCount() == 0;
@@ -69,7 +69,7 @@ public class TaskManagerFragment extends Fragment {
         });
     }
 
-    @Click(R.id.close_all)
+//    @Click(R.id.close_all)
     void closeAllRunningScripts() {
         AutoJs.getInstance().getScriptEngineService().stopAll();
     }

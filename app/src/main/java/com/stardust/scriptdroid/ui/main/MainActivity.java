@@ -38,7 +38,7 @@ import com.stardust.scriptdroid.external.floatingwindow.HoverMenuManger;
 import com.stardust.scriptdroid.script.ScriptFile;
 import com.stardust.scriptdroid.script.StorageScriptProvider;
 import com.stardust.scriptdroid.ui.common.ScriptOperations;
-import com.stardust.scriptdroid.ui.main.task.TaskManagerFragment_;
+//import com.stardust.scriptdroid.ui.main.task.TaskManagerFragment_;
 import com.stardust.util.DeveloperUtils;
 import com.stardust.util.IntentExtras;
 import com.stardust.view.accessibility.AccessibilityService;
@@ -48,7 +48,7 @@ import com.stardust.scriptdroid.ui.BaseActivity;
 import com.stardust.scriptdroid.ui.main.sample_list.SampleScriptListFragment;
 import com.stardust.scriptdroid.ui.main.script_list.MyScriptListFragment;
 import com.stardust.scriptdroid.ui.main.script_list.ScriptFileChooserDialogBuilder;
-import com.stardust.scriptdroid.ui.settings.SettingsActivity_;
+//import com.stardust.scriptdroid.ui.settings.SettingsActivity_;
 import com.stardust.scriptdroid.ui.update.VersionGuard;
 import com.stardust.theme.dialog.ThemeColorMaterialDialogBuilder;
 import com.stardust.util.BackPressedHandler;
@@ -58,16 +58,16 @@ import com.stardust.view.accessibility.AccessibilityServiceUtils;
 import com.stardust.widget.CommonMarkdownView;
 import com.stardust.widget.SlidingUpPanel;
 
-import org.androidannotations.annotations.AfterViews;
-import org.androidannotations.annotations.Click;
-import org.androidannotations.annotations.EActivity;
-import org.androidannotations.annotations.ViewById;
+//import org.androidannotations.annotations.AfterViews;
+//import org.androidannotations.annotations.Click;
+//import org.androidannotations.annotations.EActivity;
+//import org.androidannotations.annotations.ViewById;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
 import java.io.InputStream;
 
-@EActivity(R.layout.activity_main)
+//@EActivity(R.layout.activity_main)
 public class MainActivity extends BaseActivity implements OnActivityResultDelegate.DelegateHost {
 
     public static final String MESSAGE_CLEAR_BACKGROUND_SETTINGS = "MESSAGE_CLEAR_BACKGROUND_SETTINGS";
@@ -85,11 +85,11 @@ public class MainActivity extends BaseActivity implements OnActivityResultDelega
     private static final String ACTION_ON_ROOT_RECORD_STOP = "ACTION_ON_ROOT_RECORD_STOP";
 
 
-    @ViewById(R.id.drawer_layout)
+//    @ViewById(R.id.drawer_layout)
     DrawerLayout mDrawerLayout;
-    @ViewById(R.id.bottom_menu)
+//    @ViewById(R.id.bottom_menu)
     SlidingUpPanel mAddBottomMenuPanel;
-    @ViewById(R.id.viewpager)
+//    @ViewById(R.id.viewpager)
     ViewPager mViewPager;
     private FragmentPagerAdapterBuilder.StoredFragmentPagerAdapter mPagerAdapter;
 
@@ -110,7 +110,7 @@ public class MainActivity extends BaseActivity implements OnActivityResultDelega
         stopService(new Intent(this, DownloadService.class));
     }
 
-    @AfterViews
+//    @AfterViews
     void setUpViews() {
         setUpToolbar();
         setUpTabViewPager();
@@ -197,30 +197,30 @@ public class MainActivity extends BaseActivity implements OnActivityResultDelega
         mPagerAdapter = new FragmentPagerAdapterBuilder(this)
                 .add(new MyScriptListFragment(), R.string.text_my_script)
                 .add(new SampleScriptListFragment(), R.string.text_sample_script)
-                .add(new TaskManagerFragment_(), R.string.text_task_manage)
+//                .add(new TaskManagerFragment_(), R.string.text_task_manage)
                 .build();
         mViewPager.setAdapter(mPagerAdapter);
         tabLayout.setupWithViewPager(mViewPager);
     }
 
-    @Click(R.id.add)
+//    @Click(R.id.add)
     void showAddFilePanel() {
         mAddBottomMenuPanel.show();
     }
 
-    @Click(R.id.create_new_file)
+//    @Click(R.id.create_new_file)
     void createScriptFile() {
         new ScriptOperations(this, mDrawerLayout)
                 .newScriptFile();
     }
 
-    @Click(R.id.create_new_directory)
+//    @Click(R.id.create_new_directory)
     void createNewDirectory() {
         new ScriptOperations(this, mDrawerLayout)
                 .newDirectory();
     }
 
-    @Click(R.id.import_from_file)
+//    @Click(R.id.import_from_file)
     void showFileChooser() {
         final StorageScriptProvider provider = StorageScriptProvider.getExternalStorageProvider();
         new ScriptFileChooserDialogBuilder(this)
@@ -252,12 +252,12 @@ public class MainActivity extends BaseActivity implements OnActivityResultDelega
                 .show();
     }
 
-    @Click(R.id.setting)
+//    @Click(R.id.setting)
     void startSettingActivity() {
-        startActivity(new Intent(this, SettingsActivity_.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+//        startActivity(new Intent(this, SettingsActivity_.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
     }
 
-    @Click(R.id.exit)
+//    @Click(R.id.exit)
     public void exitCompletely() {
         HoverMenuManger.hideHoverMenu();
         stopService(new Intent(this, FloatyService.class));
@@ -265,7 +265,7 @@ public class MainActivity extends BaseActivity implements OnActivityResultDelega
         finish();
     }
 
-    @Click(R.id.drawer_header_img)
+//    @Click(R.id.drawer_header_img)
     public void selectHeaderImage() {
         mDrawerHeaderBackgroundSaver.select(this, mActivityResultMediator);
     }
@@ -282,7 +282,7 @@ public class MainActivity extends BaseActivity implements OnActivityResultDelega
         mVersionGuard.checkDeprecateAndUpdate();
     }
 
-    @Click(R.id.toolbar)
+//    @Click(R.id.toolbar)
     public void OnToolbarClick() {
         mAppbarBackgroundSaver.select(this, mActivityResultMediator);
     }

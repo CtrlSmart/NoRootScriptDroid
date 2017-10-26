@@ -34,8 +34,8 @@ import com.stardust.util.SparseArrayEntries;
 import com.stardust.widget.ToolbarMenuItem;
 
 
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+//import butterknife.ButterKnife;
+//import butterknife.OnClick;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Consumer;
@@ -97,7 +97,7 @@ public class ViewSampleActivity extends Editor920Activity implements OnActivityR
         ThemeColorManager.addActivityStatusBar(this);
         setUpToolbar();
         initMenuItem();
-        ButterKnife.bind(this);
+//        ButterKnife.bind(this);
     }
 
     private void setUpEditor() {
@@ -112,14 +112,14 @@ public class ViewSampleActivity extends Editor920Activity implements OnActivityR
         BaseActivity.setToolbarAsBack(this, R.id.toolbar, mSample.name);
     }
 
-    @OnClick(R.id.run)
+//    @OnClick(R.id.run)
     void run() {
         Snackbar.make(mView, R.string.text_start_running, Snackbar.LENGTH_SHORT).show();
         setMenuStatus(R.id.run, MenuDef.STATUS_DISABLED);
         mScriptExecution = Scripts.runWithBroadcastSender(new StringScriptSource(mSample.name, mEditorDelegate.getText()));
     }
 
-    @OnClick(R.id.edit)
+//    @OnClick(R.id.edit)
     void edit() {
         new ScriptOperations(this, mView)
                 .importSample(mSample)
@@ -157,20 +157,20 @@ public class ViewSampleActivity extends Editor920Activity implements OnActivityR
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_console:
-                showConsole();
-                return true;
-            case R.id.action_log:
-                showLog();
-                return true;
-            case R.id.action_help:
-                HelpCatalogueActivity.showMainCatalogue(this);
-                return true;
-            case R.id.action_import:
-                new ScriptOperations(this, mView)
-                        .importSample(mSample)
-                        .subscribe();
-                return true;
+//            case R.id.action_console:
+//                showConsole();
+//                return true;
+//            case R.id.action_log:
+//                showLog();
+//                return true;
+//            case R.id.action_help:
+//                HelpCatalogueActivity.showMainCatalogue(this);
+//                return true;
+//            case R.id.action_import:
+//                new ScriptOperations(this, mView)
+//                        .importSample(mSample)
+//                        .subscribe();
+//                return true;
         }
         return super.onOptionsItemSelected(item);
     }

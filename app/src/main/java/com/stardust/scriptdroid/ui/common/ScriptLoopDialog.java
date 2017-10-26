@@ -14,8 +14,8 @@ import com.stardust.scriptdroid.R;
 import com.stardust.scriptdroid.script.ScriptFile;
 import com.stardust.scriptdroid.script.Scripts;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+//import butterknife.BindView;
+//import butterknife.ButterKnife;
 
 /**
  * Created by Stardust on 2017/7/8.
@@ -26,13 +26,13 @@ public class ScriptLoopDialog {
     private ScriptFile mScriptFile;
     private MaterialDialog mDialog;
 
-    @BindView(R.id.loop_times)
+//    @BindView(R.id.loop_times)
     TextInputEditText mLoopTimes;
 
-    @BindView(R.id.loop_interval)
+//    @BindView(R.id.loop_interval)
     TextInputEditText mLoopInterval;
 
-    @BindView(R.id.loop_delay)
+//    @BindView(R.id.loop_delay)
     TextInputEditText mLoopDelay;
 
 
@@ -50,7 +50,7 @@ public class ScriptLoopDialog {
                     }
                 })
                 .build();
-        ButterKnife.bind(this, view);
+//        ButterKnife.bind(this, view);
     }
 
     private void startScriptRunningLoop() {

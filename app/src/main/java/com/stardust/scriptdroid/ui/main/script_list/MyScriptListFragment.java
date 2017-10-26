@@ -36,8 +36,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
-import butterknife.OnClick;
-import butterknife.Optional;
+//import butterknife.OnClick;
+//import butterknife.Optional;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
@@ -152,16 +152,16 @@ public class MyScriptListFragment extends Fragment {
         });
     }
 
-    @Optional
-    @OnClick(R.id.loop)
+//    @Optional
+//    @OnClick(R.id.loop)
     void runScriptRepeatedly() {
         dismissDialogs();
         new ScriptLoopDialog(getActivity(), mSelectedScriptFile)
                 .show();
     }
 
-    @Optional
-    @OnClick(R.id.rename)
+//    @Optional
+//    @OnClick(R.id.rename)
     void renameScriptFile() {
         dismissDialogs();
         new ScriptOperations(getActivity(), getView())
@@ -183,8 +183,8 @@ public class MyScriptListFragment extends Fragment {
     }
 
 
-    @Optional
-    @OnClick(R.id.open_by_other_apps)
+//    @Optional
+//    @OnClick(R.id.open_by_other_apps)
     void openByOtherApps() {
         dismissDialogs();
         Scripts.openByOtherApps(mSelectedScriptFile);
@@ -201,8 +201,8 @@ public class MyScriptListFragment extends Fragment {
         });
     }
 
-    @Optional
-    @OnClick(R.id.create_shortcut)
+//    @Optional
+//    @OnClick(R.id.create_shortcut)
     void createShortcut() {
         dismissDialogs();
         Scripts.createShortcut(mSelectedScriptFile);
@@ -210,8 +210,8 @@ public class MyScriptListFragment extends Fragment {
         onScriptFileOperated();
     }
 
-    @Optional
-    @OnClick(R.id.delete)
+//    @Optional
+//    @OnClick(R.id.delete)
     void deleteScriptFile() {
         dismissDialogs();
         new MaterialDialog.Builder(getActivity())

@@ -17,18 +17,18 @@ import com.stardust.scriptdroid.Constants;
 import com.stardust.scriptdroid.Pref;
 import com.stardust.scriptdroid.R;
 import com.stardust.scriptdroid.ui.BaseActivity;
-import com.stardust.scriptdroid.ui.main.MainActivity_;
-
-import org.androidannotations.annotations.AfterViews;
-import org.androidannotations.annotations.EActivity;
-import org.androidannotations.annotations.ViewById;
+//import com.stardust.scriptdroid.ui.main.MainActivity_;
+//
+//import org.androidannotations.annotations.AfterViews;
+//import org.androidannotations.annotations.EActivity;
+//import org.androidannotations.annotations.ViewById;
 
 import java.util.Locale;
 
 /**
  * Created by Stardust on 2017/7/7.
  */
-@EActivity(R.layout.activity_splash)
+//@EActivity(R.layout.activity_splash)
 public class SplashActivity extends BaseActivity {
 
     public static final String NOT_START_MAIN_ACTIVITY = "Eating...I...really...love...you...";
@@ -36,16 +36,16 @@ public class SplashActivity extends BaseActivity {
 
     private static final String LOG_TAG = SplashActivity.class.getSimpleName();
 
-    @ViewById(R.id.logo)
+//    @ViewById(R.id.logo)
     ImageView mLogo;
 
-    @ViewById(R.id.skip_view)
+//    @ViewById(R.id.skip_view)
     TextView mSkipView;
 
-    @ViewById(R.id.ad_container)
+//    @ViewById(R.id.ad_container)
     View mAdContainer;
 
-    @ViewById(R.id.ad)
+//    @ViewById(R.id.ad)/
     FrameLayout mAd;
 
     private SplashAD mSplashAD;
@@ -62,14 +62,14 @@ public class SplashActivity extends BaseActivity {
         }
     }
 
-    @AfterViews
+//    @AfterViews
     void setUpViews() {
         fetchSplashAD();
     }
 
     void enterNextActivity() {
         if (!mNotStartMainActivity)
-            MainActivity_.intent(this).start();
+//            MainActivity_.intent(this).start();
         finish();
     }
 

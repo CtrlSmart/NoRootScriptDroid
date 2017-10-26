@@ -17,21 +17,21 @@ import com.stardust.scriptdroid.ui.main.script_list.ScriptAndFolderListRecyclerV
 import com.stardust.scriptdroid.ui.main.script_list.ScriptListWithProgressBarView;
 import com.twofortyfouram.locale.sdk.client.ui.activity.AbstractAppCompatPluginActivity;
 
-import org.androidannotations.annotations.AfterViews;
-import org.androidannotations.annotations.Click;
-import org.androidannotations.annotations.EActivity;
+//import org.androidannotations.annotations.AfterViews;
+//import org.androidannotations.annotations.Click;
+//import org.androidannotations.annotations.EActivity;
 
 /**
  * Created by Stardust on 2017/3/27.
  */
-@EActivity(R.layout.activity_tasker_edit)
+//@EActivity(R.layout.activity_tasker_edit)
 public class TaskPrefEditActivity extends AbstractAppCompatPluginActivity {
 
     private String mSelectedScriptFilePath;
     private String mPreExecuteScript;
     private StorageScriptProvider mStorageScriptProvider;
 
-    @AfterViews
+//    @AfterViews
     void setUpViews() {
         BaseActivity.setToolbarAsBack(this, R.id.toolbar, getString(R.string.text_please_choose_a_script));
         initScriptListRecyclerView();
@@ -54,7 +54,7 @@ public class TaskPrefEditActivity extends AbstractAppCompatPluginActivity {
     }
 
 
-    @Click(R.id.edit_script)
+//    @Click(R.id.edit_script)
     void editPreExecuteScript() {
         TaskerScriptEditActivity.edit(this, getString(R.string.text_pre_execute_script), getString(R.string.summary_pre_execute_script), mPreExecuteScript == null ? "" : mPreExecuteScript);
     }

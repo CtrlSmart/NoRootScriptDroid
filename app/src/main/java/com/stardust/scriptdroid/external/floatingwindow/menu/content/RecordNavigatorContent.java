@@ -38,9 +38,9 @@ import com.stardust.widget.ViewSwitcher;
 
 import org.greenrobot.eventbus.Subscribe;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+//import butterknife.BindView;
+//import butterknife.ButterKnife;
+//import butterknife.OnClick;
 import io.mattcarroll.hover.Navigator;
 import io.mattcarroll.hover.NavigatorContent;
 
@@ -52,19 +52,19 @@ import io.mattcarroll.hover.NavigatorContent;
 public class RecordNavigatorContent implements NavigatorContent, Recorder.OnStateChangedListener, GlobalKeyObserver.OnVolumeDownListener {
 
     private View mView;
-    @BindView(R.id.sw_recorded_by_root)
+//    @BindView(R.id.sw_recorded_by_root)
     PrefSwitch mRecordedByRootSwitch;
 
-    @BindView(R.id.sw_record_toast)
+//    @BindView(R.id.sw_record_toast)
     PrefSwitch mRecordToastSwitch;
 
-    @BindView(R.id.img_pause_or_resume)
+//    @BindView(R.id.img_pause_or_resume)
     ImageView mPauseOrResumeImage;
 
-    @BindView(R.id.text_pause_or_resume)
+//    @BindView(R.id.text_pause_or_resume)
     TextView mPauseOrResumeText;
 
-    @BindView(R.id.view_switcher)
+//    @BindView(R.id.view_switcher)
     ViewSwitcher mViewSwitcher;
 
     private GlobalRecorder mRecorder;
@@ -74,7 +74,7 @@ public class RecordNavigatorContent implements NavigatorContent, Recorder.OnStat
     public RecordNavigatorContent(Context context) {
         mContext = new ContextThemeWrapper(context, R.style.AppTheme);
         mView = View.inflate(mContext, R.layout.floating_window_record, null);
-        ButterKnife.bind(this, mView);
+//        ButterKnife.bind(this, mView);
         HoverMenuService.getEventBus().register(this);
         mRecorder = GlobalRecorder.getSingleton(context);
         mRecorder.addOnStateChangedListener(this);
@@ -114,29 +114,29 @@ public class RecordNavigatorContent implements NavigatorContent, Recorder.OnStat
 
     }
 
-    @OnClick(R.id.sw_root_container)
+//    @OnClick(R.id.sw_root_container)
     void toggleRecordedByRootSwitch() {
         mRecordedByRootSwitch.toggle();
     }
 
-    @OnClick(R.id.sw_record_toast_container)
+//    @OnClick(R.id.sw_record_toast_container)
     void toggleRecordToastSwitch() {
         mRecordToastSwitch.toggle();
     }
 
-    @OnClick(R.id.start_record)
+//    @OnClick(R.id.start_record)
     void startRecord() {
         mRecorder.start();
         HoverMenuService.postIntent(new Intent(HoverMenuService.ACTION_COLLAPSE_MENU));
     }
 
-    @OnClick(R.id.discard_record)
+//    @OnClick(R.id.discard_record)
     void discardRecord() {
         mRecorder.discard();
     }
 
 
-    @OnClick(R.id.pause_or_resume_record)
+//    @OnClick(R.id.pause_or_resume_record)
     void pauseOrResumeRecord() {
         if (mRecorder.getState() == Recorder.STATE_PAUSED) {
             mRecorder.resume();
@@ -158,7 +158,7 @@ public class RecordNavigatorContent implements NavigatorContent, Recorder.OnStat
                 state == Recorder.STATE_RECORDING ? R.string.text_pause_record : R.string.text_resume_record);
     }
 
-    @OnClick(R.id.stop_record)
+//    @OnClick(R.id.stop_record)
     void stopRecord() {
         mRecorder.stop();
         setState(Recorder.STATE_STOPPED);
