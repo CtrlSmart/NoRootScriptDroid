@@ -1,7 +1,7 @@
 def manifestFile
 if (compileAsLib) {
     apply plugin: 'com.android.library'
-    manifestFile = 'AndroidManifest_lib.xml'
+    manifestFile = 'AndroidManifest.xml'
 } else {
     apply plugin: 'com.android.application'
     manifestFile = 'AndroidManifest.xml'
