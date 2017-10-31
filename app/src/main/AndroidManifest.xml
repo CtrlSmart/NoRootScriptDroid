@@ -50,7 +50,7 @@
 
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.stardust.scriptdroid.fileprovider"
+            android:authorities="com.ctrlsmart.wx.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
