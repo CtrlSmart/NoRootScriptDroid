@@ -34,12 +34,12 @@ public class AccessibilityServiceTool {
     public static void goToAccessibilitySetting() {
         Context context = App.getApp();
         if (Pref.isFirstGoToAccessibilitySetting()) {
-            App.getApp().getUiHandler().toast(context.getString(R.string.text_please_choose) + context.getString(R.string._app_name));
+            App.getApp().getUiHandler().toast(context.getString(R.string.text_please_choose) + context.getString(R.string.app_mc));
         }
         try {
             AccessibilityServiceUtils.goToAccessibilitySetting(context);
         } catch (ActivityNotFoundException e) {
-            App.getApp().getUiHandler().toast(context.getString(R.string.go_to_accessibility_settings) + context.getString(R.string._app_name));
+            App.getApp().getUiHandler().toast(context.getString(R.string.go_to_accessibility_settings) + context.getString(R.string.app_mc));
         }
     }
 

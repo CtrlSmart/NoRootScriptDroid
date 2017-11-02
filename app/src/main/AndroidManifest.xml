@@ -241,7 +241,7 @@
 
         <service
             android:name="com.stardust.scriptdroid.accessibility.AccessibilityService"
-            android:label="@string/_app_name"
+            android:label="@string/app_mc"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
             <intent-filter>
                 <action android:name="android.accessibilityservice.AccessibilityService"/>

@@ -1,4 +1,5 @@
 <resources>
+    <string name="app_mc">猴控大师</string>
     <string name="_app_name">Auto.js</string>
     <string name="action_settings">设置</string>
     <string name="text_new_file">新建文件</string>
@@ -126,7 +127,7 @@
     <string name="key_stop_record_trigger">key_stop_record_trigger</string>
     <string name="text_current_activity">当前活动:</string>
     <string name="text_current_package">当前应用包名:</string>
-    <string name="go_to_accessibility_settings"><![CDATA[请打开设置->无障碍服务->AutoJs并开启]]></string>
+    <string name="go_to_accessibility_settings"><![CDATA[请打开设置->无障碍服务->猴控大师 并开启]]></string>
     <string name="text_script_running">脚本运行</string>
     <string name="key_use_volume_control_running">key_use_volume_control_running</string>
     <string name="text_use_volume_to_stop_running">音量上键停止所有脚本</string>
