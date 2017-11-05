@@ -14,6 +14,8 @@ import android.webkit.MimeTypeMap;
 import com.stardust.autojs.annotation.ScriptInterface;
 import com.stardust.util.IntentUtil;
 
+import org.json.JSONObject;
+
 import java.lang.ref.WeakReference;
 import java.util.List;
 
@@ -27,7 +29,7 @@ public class AppUtils {
 
     private Context mContext;
     private volatile WeakReference<Activity> mCurrentActivity = new WeakReference<>(null);
-
+    private JSONObject jsonObject;
     public AppUtils(Context context) {
         mContext = context;
     }
@@ -129,4 +131,18 @@ public class AppUtils {
         mCurrentActivity = new WeakReference<>(currentActivity);
         Log.d("App", "setCurrentActivity: " + currentActivity);
     }
+
+    @ScriptInterface
+    public void setResult(String result) {
+            try {
+                jsonObject = new JSONObject(result);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+    }
+
+    public JSONObject getResult(){
+        return jsonObject;
+    }
+
 }

@@ -16,7 +16,8 @@
       "launch",
       "launchApp",
       "getPackageName",
-      "openAppSetting"
+      "openAppSetting",
+      "setResult"
     ],
     "automator": [
       "click",
@@ -183,7 +184,8 @@
     "launch",
     "launchApp",
     "getPackageName",
-    "openAppSetting"
+    "openAppSetting",
+    "setResult"
   ],
   "automator": [
     "click",
